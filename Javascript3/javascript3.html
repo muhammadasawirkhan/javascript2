@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+</head>
+<body id="bdy">
+	SearchBox:
+	<input type="text" id="searchterm"/>
+	<div class="text">Password length can not be greater than 4</div>
+	<button id="searchBtn">Search</button>
+
+
+	<script>
+		var searchterm=document.querySelector("#searchterm");
+		var searchBtn=document.querySelector("#searchBtn");
+		document.querySelector(".text").style.display='none';
+
+		searchterm.addEventListener('keyup',()=>{
+			var text=searchterm.value;
+			if (text.length>4) 
+			{
+				document.querySelector(".text").style.display='block';
+			}
+		});
+
+		function validate1()
+		{
+			var text=searchterm.value;
+			if (text.length>4)
+			{
+				document.querySelector(".text").style.display='block';
+			}
+		}
+		//var div=document.createElement('div');
+
+		searchBtn.addEventListener('click',()=>
+		{
+			var ul=document.createElement("ul");
+			var li1=document.createElement("li");
+			li1.textContent="A";
+			ul.appendChild(li1);
+			var li2=document.createElement("li");
+			li2.textContent="B";
+
+			ul.appendChild(li2);
+
+			var div=document.createElement("div");
+			div.appendChild(ul);
+
+			var bdy=document.querySelector("#bdy");
+			bdy.appendChild(div);
+		}
+		);
+		
+	</script>
+</body>
+</html>
